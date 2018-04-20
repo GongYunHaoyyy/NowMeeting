@@ -178,8 +178,12 @@ public class FragmentMeeting extends BaseFragment{
                     }
                     MeetingInformation meetingItem5 = new MeetingInformation();
                     meetingItem5.setViewType(MEETING);
-                    meetingItem5.setName("电影讨论大会");
-                    meetingItem5.setMeetingPictureId(R.drawable.meeting_test_2);
+                    meetingItem5.setName("电影迷聚会");
+                    meetingItem5.setSponsorName("杨琪");
+                    meetingItem5.setCity( "北京" );
+                    meetingItem5.setLocation( "西雅图" );
+                    meetingItem5.setTime( "2018-6-6" );
+                    meetingItem5.setMeetingPictureId(R.drawable.meeting_test_1);
                     meetingItem5.setMeetingType(MeetingInformation.FRIEND_PARTICIPATE);
                     usermeetingList.add(meetingItem5);
 
