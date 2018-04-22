@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="你喜欢哪个天气？"/>
+            android:text="评选年度最佳员工"/>
 
         <ImageView
             android:layout_width="60dp"
@@ -55,7 +55,7 @@
             android:layout_marginTop="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="总投票人数：100人\n\n晴天 支持率：40%\n雨 支持率：26%\n阴 支持率：34%"
+            android:text="总投票人数：6人\n\n袁来 支持率：40%\n龚云浩 支持率：26%\n杨琪 支持率：34%"
             android:gravity="start"
             android:layout_margin="12dp"
             android:lineSpacingExtra="@dimen/card_elevation"

@@ -23,7 +23,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:minLines="2"
-            android:text="投票选择你喜欢的天气"/>
+            android:text="评选年度最佳员工"/>
 
         <TextView
             android:id="@+id/tv_item_vote_small_date"
@@ -54,7 +54,7 @@
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="12dp"
                 android:paddingTop="@dimen/corner"
-                android:text="晴天，雨天，大雪..."/>
+                android:text="袁来，龚云浩，罗毓..."/>
 
         </LinearLayout>
 

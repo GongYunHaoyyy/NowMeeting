@@ -35,7 +35,8 @@ public class UserRecyclerviewAdapter extends RecyclerView.Adapter<UserRecyclervi
     private OnItemClickListener onItemClickListener = null;
     private List<UserInfo> userItems;
     private Context mContext;
-
+    private int[] drawables={R.drawable.head5,R.drawable.head3,R.drawable.head2,R.drawable.head1,R.drawable.head4};
+    private String[] namess={"gongyuhao","yuanlai","yuanlaidada","qwer"};
     @Override
     public void onClick(View view) {
         if (onItemClickListener != null){
@@ -59,8 +60,8 @@ public class UserRecyclerviewAdapter extends RecyclerView.Adapter<UserRecyclervi
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
 
-        Glide.with(mContext).load(R.drawable.head3).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(holder.imageViewUserPicture);
-        holder.textViewUserName.setText(userItems.get(position).getUserName());
+        Glide.with(mContext).load(drawables[position]).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(holder.imageViewUserPicture);
+        holder.textViewUserName.setText(namess[position]);
         holder.userView.setTag( position );
     }
 
@@ -90,6 +91,6 @@ public class UserRecyclerviewAdapter extends RecyclerView.Adapter<UserRecyclervi
 
     @Override
     public int getItemCount() {
-        return userItems.size();
+        return 4;
     }
 }

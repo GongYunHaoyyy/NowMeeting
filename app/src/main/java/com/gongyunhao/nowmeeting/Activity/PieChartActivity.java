@@ -131,9 +131,9 @@ public class PieChartActivity extends AppCompatActivity implements OnChartValueS
         entries2.add(new PieEntry(25, "网球"));
 
         ArrayList<PieEntry> entries3 = new ArrayList<PieEntry>();
-        entries3.add(new PieEntry(40, "晴天"));
-        entries3.add(new PieEntry(26, "雨"));
-        entries3.add(new PieEntry(34, "阴"));
+        entries3.add(new PieEntry(40, "袁来"));
+        entries3.add(new PieEntry(26, "龚云浩"));
+        entries3.add(new PieEntry(34, "杨琪"));
         //将所有数据填到大List中。
 
         //模拟数据
@@ -144,7 +144,7 @@ public class PieChartActivity extends AppCompatActivity implements OnChartValueS
         piename.add( "班级考试情况" );
         piename.add( "学生分布情况" );
         piename.add( "兴趣分布" );
-        piename.add( "最近天气情况" );
+        piename.add( "员工" );
     }
 
     //设置数据

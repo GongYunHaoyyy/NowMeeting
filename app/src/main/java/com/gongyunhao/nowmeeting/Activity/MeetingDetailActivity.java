@@ -134,13 +134,12 @@ public class MeetingDetailActivity extends BaseActivity implements View.OnClickL
         Intent intent = getIntent();
         meetingID= String.valueOf( intent.getIntExtra("meetingId",0) );
         getMeetingInfo(String.valueOf(meetingID));
+        voteitemList.add( new Voteitem( "最佳员工","2018-4-17","老板" ) );
 
-//        for (int i=0;i<3;i++){
-//            voteitemList.add( new Voteitem( "天气","2018","龚云浩" ) );
-//        }
+        lotteryItemList.add( new LotteryItem() );
+        lotteryItemList.add( new LotteryItem() );
 
-
-       // Glide.with(this).load(R.drawable.).apply( RequestOptions.bitmapTransform(new BlurTransformation())).into(imageView_meeting_detail);
+        // Glide.with(this).load(R.drawable.).apply( RequestOptions.bitmapTransform(new BlurTransformation())).into(imageView_meeting_detail);
 
         userRecyclerviewAdapter.notifyDataSetChanged();
         lotteryRecyclerviewAdapter.notifyDataSetChanged();
