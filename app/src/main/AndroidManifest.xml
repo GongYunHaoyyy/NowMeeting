@@ -92,9 +92,13 @@
         <!-- Required. AppKey copied from Portal -->
         <meta-data
             android:name="JPUSH_APPKEY"
-            android:value="79a7ac3d8c9a642369d3bee4" />
+            android:value="41c2f1d7ddce076e58747660" />
+<!--        <meta-data-->
+<!--            android:name="JPUSH_APPKEY"-->
+<!--            android:value="79a7ac3d8c9a642369d3bee4" />-->
 
-        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.MainActivity" >
+        </activity>
         <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

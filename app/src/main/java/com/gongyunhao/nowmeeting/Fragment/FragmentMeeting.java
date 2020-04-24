@@ -67,13 +67,14 @@ public class FragmentMeeting extends BaseFragment{
     private ImageView imageView_meeting;
     private SharedPreferences sharedPreferences;
     private String userID;
-    private String mUrl="http://39.106.47.27:8080/conference/api/userEntry/dogetAllConference";
+    private String mUrl="http://47.112.211.137:8080/conference/api/userEntry/dogetAllConference";
+    //    private String mUrl="http://39.106.47.27:8080/conference/api/userEntry/dogetAllConference";
     private JSONArray jsonArray;
     private List<MeetingInformation> usermeetingList;
 
     private final int TITLE = 1;
     private final int MEETING = 2;
-   // private MeetingItem meetingItem;
+    // private MeetingItem meetingItem;
 
     @Override
     public void onAttach(Context context) {
@@ -178,12 +179,8 @@ public class FragmentMeeting extends BaseFragment{
                     }
                     MeetingInformation meetingItem5 = new MeetingInformation();
                     meetingItem5.setViewType(MEETING);
-                    meetingItem5.setName("电影迷聚会");
-                    meetingItem5.setSponsorName("杨琪");
-                    meetingItem5.setCity( "北京" );
-                    meetingItem5.setLocation( "西雅图" );
-                    meetingItem5.setTime( "2018-6-6" );
-                    meetingItem5.setMeetingPictureId(R.drawable.meeting_test_1);
+                    meetingItem5.setName("电影讨论大会");
+                    meetingItem5.setMeetingPictureId(R.drawable.meeting_test_2);
                     meetingItem5.setMeetingType(MeetingInformation.FRIEND_PARTICIPATE);
                     usermeetingList.add(meetingItem5);
 

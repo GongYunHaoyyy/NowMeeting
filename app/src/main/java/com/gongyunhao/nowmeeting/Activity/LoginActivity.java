@@ -45,7 +45,8 @@ public class LoginActivity extends BaseActivity {
     private TextView textView_signin;
     private EditText editText_username,editText_userpass;
     private String Tag = "LoginActivity";
-    private String inforUrl = "http://39.106.47.27:8080/conference/api/user/dogetInfo";
+    private String inforUrl = "http://47.112.211.137:8080/conference/api/user/dogetInfo";
+    //    private String inforUrl = "http://39.106.47.27:8080/conference/api/user/dogetInfo";
     private AlertDialog loadingDialog;
     private Boolean isLogin;
     private int userID;
@@ -182,45 +183,50 @@ public class LoginActivity extends BaseActivity {
                     Observable.create(new Observable.OnSubscribe<String>() {
                         @Override
                         public void call(Subscriber<? super String > subscriber) {
-                            try {
 
-                                String response = OkHttpUtil.getInstance().getInfo(editText_username.getText().toString(),inforUrl);
-                                Log.d(Tag,"---->执行完网络请求");
-                                Log.d(Tag,"---->"+response);
+//                                String response = OkHttpUtil.getInstance().getInfo(editText_username.getText().toString(),inforUrl);
+//                                Log.d(Tag,"---->执行完网络请求");
+//                                Log.d(Tag,"---->"+response);
+//
+//                                Gson gson = new Gson();
+//                                Root root = gson.fromJson(response, Root.class);
+//                                Log.d(Tag,"---->"+root.getData().getUsername());
 
-                                Gson gson = new Gson();
-                                Root root = gson.fromJson(response, Root.class);
-                                Log.d(Tag,"---->"+root.getData().getUsername());
-
-                                List<DataBaseUserInfo> dataBaseUserInfoList = DataSupport.findAll(DataBaseUserInfo.class);
-                                if (!dataBaseUserInfoList.isEmpty()){
-                                    DataSupport.deleteAll(DataBaseUserInfo.class);
-                                }
-                                DataBaseUserInfo dataBaseUserInfo = new DataBaseUserInfo();
-                                dataBaseUserInfo.setUsername(root.getData().getUsername());
-                                dataBaseUserInfo.setUserId(root.getData().getId());
-                                dataBaseUserInfo.setAddress(root.getData().getAddress());
-                                dataBaseUserInfo.setEmail(root.getData().getEmail());
-                                dataBaseUserInfo.setGraduateSchool(root.getData().getGraduateSchool());
-                                dataBaseUserInfo.setPassword(root.getData().getPassword());
-                                dataBaseUserInfo.setPhone(root.getData().getPhone());
-                                dataBaseUserInfo.setSignature(root.getData().getSignature());
-                                dataBaseUserInfo.setWorkingPlace(root.getData().getWorkingPlace());
-                                userID=root.getData().getId();
-                                if (dataBaseUserInfo.save()){
-                                    Log.d(Tag,"---->用户信息储存成功");
-                                }else{
-                                    Log.d(Tag,"---->用户信息储存失败");
-                                }
-
-
-                                // subscriber.onNext(response);
-                                subscriber.onCompleted();
-
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                                subscriber.onError(e);
+                            List<DataBaseUserInfo> dataBaseUserInfoList = DataSupport.findAll(DataBaseUserInfo.class);
+                            if (!dataBaseUserInfoList.isEmpty()){
+                                DataSupport.deleteAll(DataBaseUserInfo.class);
                             }
+                            DataBaseUserInfo dataBaseUserInfo = new DataBaseUserInfo();
+//                                dataBaseUserInfo.setUsername(root.getData().getUsername());
+//                                dataBaseUserInfo.setUserId(root.getData().getId());
+//                                dataBaseUserInfo.setAddress(root.getData().getAddress());
+//                                dataBaseUserInfo.setEmail(root.getData().getEmail());
+//                                dataBaseUserInfo.setGraduateSchool(root.getData().getGraduateSchool());
+//                                dataBaseUserInfo.setPassword(root.getData().getPassword());
+//                                dataBaseUserInfo.setPhone(root.getData().getPhone());
+//                                dataBaseUserInfo.setSignature(root.getData().getSignature());
+//                                dataBaseUserInfo.setWorkingPlace(root.getData().getWorkingPlace());
+//                                userID=root.getData().getId();
+                            dataBaseUserInfo = new DataBaseUserInfo();
+                            dataBaseUserInfo.setUsername("test");
+                            dataBaseUserInfo.setUserId(1);
+                            dataBaseUserInfo.setAddress("test1");
+                            dataBaseUserInfo.setEmail("test1");
+                            dataBaseUserInfo.setGraduateSchool("test2");
+                            dataBaseUserInfo.setPassword("123456");
+                            dataBaseUserInfo.setPhone("test3");
+                            dataBaseUserInfo.setSignature("test4");
+                            dataBaseUserInfo.setWorkingPlace("test5");
+                            userID=1;
+                            if (dataBaseUserInfo.save()){
+                                Log.d(Tag,"---->用户信息储存成功");
+                            }else{
+                                Log.d(Tag,"---->用户信息储存失败");
+                            }
+
+
+                            // subscriber.onNext(response);
+                            subscriber.onCompleted();
 
                         }
                     })
@@ -267,6 +273,7 @@ public class LoginActivity extends BaseActivity {
 
                 }else {
                     Log.d(Tag,"---->极光登录失败");
+                    Log.d(Tag,s);
                     loadingDialog.dismiss();
                 }
 

@@ -30,7 +30,7 @@ public class ScanActivity extends PermissionActivity implements QRCodeView.Deleg
     private String userID;
     //?userId=36&conferenceId=33
     //扫码签到接口
-    private String checkUrl="http://39.106.47.27:8080/conference/api/userEntry/doSignInConference";
+    private String checkUrl="http://47.112.211.137:8080/conference/api/userEntry/doSignInConference";
     private static final int REQUEST_SUCCESS=0;
     private static final int REQUEST_FAILED=1;
     private static final int REQUEST_ERROR=2;

@@ -115,7 +115,7 @@ public class OkHttpUtil {
                 .build();
 
         /* 下边的就和post一样了 */
-        Request request = new Request.Builder().url("http://39.106.47.27:8080/conference/api/user/doregister").post(mBody).build();
+        Request request = new Request.Builder().url("http://47.112.211.137:8080/conference/api/user/doregister").post(mBody).build();
         Response response=mClient.newCall(request).execute();
 
 //            RequestBody requestBody=new FormBody.Builder()

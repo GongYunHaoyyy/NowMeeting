@@ -30,7 +30,7 @@ public class AddFriendActivity extends AppCompatActivity {
     private boolean isaddfriend=false;
     private String userID;
 
-    private String signupUrl="http://39.106.47.27:8080/conference/api/userEntry/doSignUpConference";
+    private String signupUrl="http://47.112.211.137:8080/conference/api/userEntry/doSignUpConference";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

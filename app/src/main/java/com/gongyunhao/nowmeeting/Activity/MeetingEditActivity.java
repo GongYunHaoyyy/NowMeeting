@@ -32,7 +32,7 @@ public class MeetingEditActivity extends BaseActivity {
     private EditText editTextMeetingName;
     private EditText editTextMeetingTime;
     private TextView textViewPublishMeeting;
-    private String meetingCreateUrl = "http://39.106.47.27:8080/conference/api/conference/docreateConference";
+    private String meetingCreateUrl = "http://47.112.211.137:8080/conference/api/conference/docreateConference";
     private String myName;
     private int myUserId;
     private int meetingId;

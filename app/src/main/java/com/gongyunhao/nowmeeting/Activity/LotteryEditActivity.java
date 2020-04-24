@@ -39,8 +39,8 @@ public class LotteryEditActivity extends AppCompatActivity implements View.OnCli
     private EditText editTextNumber;
     private ImageButton imageButtonBack;
     private TextView textViewPublish;
-    private String getConferenceIdByNameUrl = "http://39.106.47.27:8080/conference/api/conference/dogetConferenceInfoByName";
-    private String getLotteryPeopleUrl = "http://39.106.47.27:8080/conference/api/lottery/docreateLottery";
+    private String getConferenceIdByNameUrl = "http://47.112.211.137:8080/conference/api/conference/dogetConferenceInfoByName";
+    private String getLotteryPeopleUrl = "http://47.112.211.137:8080/conference/api/lottery/docreateLottery";
     private int conferenceId;
     private String Tag = "LotteryEditActivity";
     private String lotteryResult;

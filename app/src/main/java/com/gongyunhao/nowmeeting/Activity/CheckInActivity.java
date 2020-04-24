@@ -30,8 +30,8 @@ import okhttp3.Response;
 
 public class CheckInActivity extends BaseActivity {
     private String meetingID;
-    private String getSignedUrl="http://39.106.47.27:8080/conference/api/conference/dogetSignedNumber";
-    private String inforUrl = "http://39.106.47.27:8080/conference/api/user/dogetInfo";
+    private String getSignedUrl="http://47.112.211.137:8080/conference/api/conference/dogetSignedNumber";
+    private String inforUrl = "http://47.112.211.137:8080/conference/api/user/dogetInfo";
     private int signUpNumber,signInNumber;
     private String signInPeople;
     private Boolean issuccess;

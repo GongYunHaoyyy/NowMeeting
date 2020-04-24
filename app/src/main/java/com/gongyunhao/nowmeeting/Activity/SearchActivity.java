@@ -34,7 +34,7 @@ public class SearchActivity extends BaseActivity {
     private ImageButton ib_back;
     private EditText et_search;
     private String meetinglistdata;
-    private String inforUrl = "http://39.106.47.27:8080/conference/api/conference/dosearchConferenceByName";
+    private String inforUrl = "http://47.112.211.137:8080/conference/api/conference/dosearchConferenceByName";
     private String response;
     private boolean issuccess;
     private SearchMeetingAdapter searchMeetingAdapter;

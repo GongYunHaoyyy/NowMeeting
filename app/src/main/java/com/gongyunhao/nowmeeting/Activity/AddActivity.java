@@ -29,7 +29,8 @@ public class AddActivity extends AppCompatActivity {
     private String mFromUserName;
     private String mReason;
     private String response;
-    private String inforUrl = "http://39.106.47.27:8080/conference/api/user/dogetInfo";
+    private String inforUrl = "http://47.112.211.137:8080/conference/api/user/dogetInfo";
+    //    private String inforUrl = "http://39.106.47.27:8080/conference/api/user/dogetInfo";
     private QuNiMaDeFriendAdapter quNiMaDeFriendAdapter;
 
     RecyclerView recyclerViewAddFriend;

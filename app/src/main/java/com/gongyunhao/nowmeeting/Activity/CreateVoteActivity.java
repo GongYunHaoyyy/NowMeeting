@@ -60,8 +60,8 @@ public class CreateVoteActivity extends BaseActivity {
     private LinearLayout linear_vote_type,linear_vote_deadline;
     private List<String> vote_item_list;
     private TextView textView;
-    private String getConferenceIdByNameUrl = "http://39.106.47.27:8080/conference/api/conference/dogetConferenceInfoByName";
-    private String createVoteUrl = "http://39.106.47.27:8080/conference/api/vote/doCreateVote";
+    private String getConferenceIdByNameUrl = "http://47.112.211.137:8080/conference/api/conference/dogetConferenceInfoByName";
+    private String createVoteUrl = "http://47.112.211.137:8080/conference/api/vote/doCreateVote";
     private int conferenceId;
     private String userId;
     private Button buttonPublish;

@@ -92,88 +92,88 @@ public class FragmentMessage extends BaseFragment{
         for (int i=0 ; i<conversationList.size() ; i++){
 
 
-                UserInfo userInfo = conversationList.get(i).getLatestMessage().getFromUser();
-                SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-                Log.d(Tag,"---->"+userInfo);
-                MessageItem messageItem = new MessageItem();
-                messageItem.setConversation(conversationList.get(i));
-                messageItem.setImageId(R.drawable.head1);
-                UserInfo userInfo2 = conversationList.get(i).getLatestMessage().getFromUser();
-                String userName = userInfo2.getUserName();
-                switch (conversationList.get(i).getType()){
-                    case single:
-                        if (conversationList.get(i).getLatestMessage().getContent() instanceof TextContent){
+            UserInfo userInfo = conversationList.get(i).getLatestMessage().getFromUser();
+            SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+            Log.d(Tag,"---->"+userInfo);
+            MessageItem messageItem = new MessageItem();
+            messageItem.setConversation(conversationList.get(i));
+            messageItem.setImageId(R.drawable.head1);
+            UserInfo userInfo2 = conversationList.get(i).getLatestMessage().getFromUser();
+            String userName = userInfo2.getUserName();
+            switch (conversationList.get(i).getType()){
+                case single:
+                    if (conversationList.get(i).getLatestMessage().getContent() instanceof TextContent){
 
-                            TextContent textContent = (TextContent) conversationList.get(i).getLatestMessage().getContent();
+                        TextContent textContent = (TextContent) conversationList.get(i).getLatestMessage().getContent();
+                        if (userName.equals(myName)){
+                            messageItem.setMessage("我："+textContent.getText());
+                        }else {
+                            messageItem.setMessage(textContent.getText());
+                        }
+                    }else if(conversationList.get(i).getLatestMessage().getContent() instanceof ImageContent){
+
+                        if (userName.equals(myName)){
+                            messageItem.setMessage("我：[图片]");
+                        }else {
+                            messageItem.setMessage("[图片]");
+                        }
+
+                    }
+                    messageItem.setMessageType(MessageItem.SINGLE);
+
+                    break;
+                case group:
+
+                    if (conversationList.get(i).getLatestMessage().getContent() instanceof TextContent){
+
+                        TextContent textContent = (TextContent) conversationList.get(i).getLatestMessage().getContent();
+
+                        if (textContent.getText().startsWith("lottery")){
+
+                            if (userName.equals(myName)){
+                                messageItem.setMessage("我：[抽奖活动]");
+                            }else {
+                                messageItem.setMessage(userName+"：[抽奖活动]");
+                            }
+
+                        }else if (textContent.getText().startsWith("vote")){
+
+                            if (userName.equals(myName)){
+                                messageItem.setMessage("我：[投票活动]");
+                            }else {
+                                messageItem.setMessage(userName+"：[投票活动]");
+                            }
+
+                        } else{
+
                             if (userName.equals(myName)){
                                 messageItem.setMessage("我："+textContent.getText());
                             }else {
-                                messageItem.setMessage(textContent.getText());
+                                messageItem.setMessage(userName+"："+textContent.getText());
                             }
-                        }else if(conversationList.get(i).getLatestMessage().getContent() instanceof ImageContent){
-
-                            if (userName.equals(myName)){
-                                messageItem.setMessage("我：[图片]");
-                            }else {
-                                messageItem.setMessage("[图片]");
-                            }
-
                         }
-                        messageItem.setMessageType(MessageItem.SINGLE);
-
-                        break;
-                    case group:
-
-                        if (conversationList.get(i).getLatestMessage().getContent() instanceof TextContent){
-
-                            TextContent textContent = (TextContent) conversationList.get(i).getLatestMessage().getContent();
-
-                            if (textContent.getText().startsWith("lottery")){
-
-                                if (userName.equals(myName)){
-                                    messageItem.setMessage("我：[抽奖活动]");
-                                }else {
-                                    messageItem.setMessage(userName+"：[抽奖活动]");
-                                }
-
-                            }else if (textContent.getText().startsWith("vote")){
-
-                                if (userName.equals(myName)){
-                                    messageItem.setMessage("我：[投票活动]");
-                                }else {
-                                    messageItem.setMessage(userName+"：[投票活动]");
-                                }
-
-                            } else{
-
-                                if (userName.equals(myName)){
-                                    messageItem.setMessage("我："+textContent.getText());
-                                }else {
-                                    messageItem.setMessage(userName+"："+textContent.getText());
-                                }
-                            }
 
 
-                        }else if (conversationList.get(i).getLatestMessage().getContent() instanceof ImageContent) {
+                    }else if (conversationList.get(i).getLatestMessage().getContent() instanceof ImageContent) {
 
-                            if (userName.equals(myName)) {
-                                messageItem.setMessage("我：[图片]");
-                            } else {
-                                messageItem.setMessage(userName+"："+"[图片]");
-                            }
-
+                        if (userName.equals(myName)) {
+                            messageItem.setMessage("我：[图片]");
+                        } else {
+                            messageItem.setMessage(userName+"："+"[图片]");
                         }
-                            messageItem.setMessageType(MessageItem.GROUP);
-                        break;
-                    default:
-                        break;
-                }
 
-                messageItem.setDate(format.format(conversationList.get(i).getLatestMessage().getCreateTime()));
-                messageItem.setUserName(conversationList.get(i).getTitle());
-                messageItemList.add(messageItem);
+                    }
+                    messageItem.setMessageType(MessageItem.GROUP);
+                    break;
+                default:
+                    break;
             }
+
+            messageItem.setDate(format.format(conversationList.get(i).getLatestMessage().getCreateTime()));
+            messageItem.setUserName(conversationList.get(i).getTitle());
+            messageItemList.add(messageItem);
         }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -393,11 +393,11 @@ public class FragmentMessage extends BaseFragment{
                 }
 
                 break;
-                default:
+            default:
                 break;
         }
 
-        }
+    }
 
 
     public boolean isExist(String name){
@@ -435,121 +435,121 @@ public class FragmentMessage extends BaseFragment{
 
 
 
-         if (resultCode==getActivity().RESULT_OK){
+        if (resultCode==getActivity().RESULT_OK){
 
-             Log.d(Tag,"---->调用了回调");
+            Log.d(Tag,"---->调用了回调");
 
-             switch (requestCode){
+            switch (requestCode){
 
-                 case 1:
+                case 1:
 
-                     Log.d(Tag,"---->调用了单人聊天的回调");
-                     String type = data.getStringExtra("type");
-                     String title = data.getStringExtra("title");
-                     String message = data.getStringExtra("message");
-                     String time = data.getStringExtra("time");
-                     String userName = data.getStringExtra("userName");
-                     MessageItem messageItem = messageItemList.get(getPlaceOfUser(title));
-                     messageItem.setDate(time);
-                     messageItem.setMessageType(MessageItem.SINGLE);
-                     messageItem.setConversation(JMessageClient.getSingleConversation(title));
-                     messageItem.setImageId(R.drawable.head1);
+                    Log.d(Tag,"---->调用了单人聊天的回调");
+                    String type = data.getStringExtra("type");
+                    String title = data.getStringExtra("title");
+                    String message = data.getStringExtra("message");
+                    String time = data.getStringExtra("time");
+                    String userName = data.getStringExtra("userName");
+                    MessageItem messageItem = messageItemList.get(getPlaceOfUser(title));
+                    messageItem.setDate(time);
+                    messageItem.setMessageType(MessageItem.SINGLE);
+                    messageItem.setConversation(JMessageClient.getSingleConversation(title));
+                    messageItem.setImageId(R.drawable.head1);
 
-                     if (type.equals("text")){
+                    if (type.equals("text")){
 
-                         if (userName.equals(myName)){
-                             messageItem.setMessage("我："+message);
-                         }else {
-                             messageItem.setMessage(message);
-                         }
-                         messageItem.setUserName(title);
-                         messageItemList.remove(getPlaceOfUser(title));
-                         messageItemList.add(0,messageItem);
+                        if (userName.equals(myName)){
+                            messageItem.setMessage("我："+message);
+                        }else {
+                            messageItem.setMessage(message);
+                        }
+                        messageItem.setUserName(title);
+                        messageItemList.remove(getPlaceOfUser(title));
+                        messageItemList.add(0,messageItem);
 
-                     }else {
+                    }else {
 
-                         if (userName.equals(myName)){
-                             messageItem.setMessage("我：[图片]");
-                         }else {
-                             messageItem.setMessage("[图片]");
-                         }
-                         messageItem.setUserName(title);
-                         messageItemList.remove(getPlaceOfUser(title));
-                         messageItemList.add(0,messageItem);
+                        if (userName.equals(myName)){
+                            messageItem.setMessage("我：[图片]");
+                        }else {
+                            messageItem.setMessage("[图片]");
+                        }
+                        messageItem.setUserName(title);
+                        messageItemList.remove(getPlaceOfUser(title));
+                        messageItemList.add(0,messageItem);
 
-                     }
+                    }
 
-                     messageRecyclerViewAdapter.notifyDataSetChanged();
-
-
-                     break;
-
-                 case 2:
-
-                     boolean isLottery = data.getBooleanExtra("isLottery",false);
-                     boolean isVote = data.getBooleanExtra("isVote",false);
-                     String type1 = data.getStringExtra("type");
-                     String name1 = data.getStringExtra("userName");
-                     String message1 = data.getStringExtra("message");
-                     String time1 = data.getStringExtra("time");
-                     String groupId = data.getStringExtra("groupId");
-                     Conversation conversation = JMessageClient.getGroupConversation(Long.parseLong(groupId));
-                     MessageItem messageItem1 = messageItemList.get(getPlaceOfUser(conversation.getTitle()));
-                     messageItem1.setDate(time1);
-                     messageItem1.setMessageType(MessageItem.GROUP);
-                     messageItem1.setConversation(conversation);
-                     messageItem1.setImageId(R.drawable.head1);
-
-                     if (isLottery){
-
-                         if (name1.equals(myName)){
-                             messageItem1.setMessage("我：[抽奖活动]");
-                         }else {
-                             messageItem1.setMessage(name1+"：[抽奖活动]");
-                         }
-
-                     }else if (isVote){
-
-                         if (name1.equals(myName)){
-                             messageItem1.setMessage("我：[投票活动]");
-                         }else {
-                             messageItem1.setMessage(name1+"：[投票活动]");
-                         }
-
-                     } else{
-
-                         if (type1.equals("text")){
-                             if (name1.equals(myName)){
-                                 messageItem1.setMessage("我："+message1);
-                             }else {
-                                 messageItem1.setMessage(name1+"："+message1);
-                             }
-                         }else{
-                             if (name1.equals(myName)){
-                                 messageItem1.setMessage("我：[图片]");
-                             }else {
-                                 messageItem1.setMessage(name1+"：[图片]");
-                             }
-                         }
+                    messageRecyclerViewAdapter.notifyDataSetChanged();
 
 
-                     }
+                    break;
+
+                case 2:
+
+                    boolean isLottery = data.getBooleanExtra("isLottery",false);
+                    boolean isVote = data.getBooleanExtra("isVote",false);
+                    String type1 = data.getStringExtra("type");
+                    String name1 = data.getStringExtra("userName");
+                    String message1 = data.getStringExtra("message");
+                    String time1 = data.getStringExtra("time");
+                    String groupId = data.getStringExtra("groupId");
+                    Conversation conversation = JMessageClient.getGroupConversation(Long.parseLong(groupId));
+                    MessageItem messageItem1 = messageItemList.get(getPlaceOfUser(conversation.getTitle()));
+                    messageItem1.setDate(time1);
+                    messageItem1.setMessageType(MessageItem.GROUP);
+                    messageItem1.setConversation(conversation);
+                    messageItem1.setImageId(R.drawable.head1);
+
+                    if (isLottery){
+
+                        if (name1.equals(myName)){
+                            messageItem1.setMessage("我：[抽奖活动]");
+                        }else {
+                            messageItem1.setMessage(name1+"：[抽奖活动]");
+                        }
+
+                    }else if (isVote){
+
+                        if (name1.equals(myName)){
+                            messageItem1.setMessage("我：[投票活动]");
+                        }else {
+                            messageItem1.setMessage(name1+"：[投票活动]");
+                        }
+
+                    } else{
+
+                        if (type1.equals("text")){
+                            if (name1.equals(myName)){
+                                messageItem1.setMessage("我："+message1);
+                            }else {
+                                messageItem1.setMessage(name1+"："+message1);
+                            }
+                        }else{
+                            if (name1.equals(myName)){
+                                messageItem1.setMessage("我：[图片]");
+                            }else {
+                                messageItem1.setMessage(name1+"：[图片]");
+                            }
+                        }
 
 
-                     messageItem1.setUserName(conversation.getTitle());
-                     messageItemList.remove(getPlaceOfUser(conversation.getTitle()));
-                     messageItemList.add(0,messageItem1);
-                     messageRecyclerViewAdapter.notifyDataSetChanged();
+                    }
 
 
-                     break;
+                    messageItem1.setUserName(conversation.getTitle());
+                    messageItemList.remove(getPlaceOfUser(conversation.getTitle()));
+                    messageItemList.add(0,messageItem1);
+                    messageRecyclerViewAdapter.notifyDataSetChanged();
 
-                 default:
-                     break;
 
-             }
+                    break;
 
-         }
+                default:
+                    break;
+
+            }
+
+        }
 
     }
 }

@@ -40,8 +40,8 @@ public class SearchFriendActivity extends BaseActivity {
     private List<Data> dataList=new ArrayList<>(  );
     private boolean issuccess;
     private SearchFriendAdapter searchFriendAdapter;
-    private String inforUrl = "http://39.106.47.27:8080/conference/api/user/dogetInfo";
-    private String searchUrl="http://39.106.47.27:8080/conference/api/user/dosearchUsersByName";
+    private String inforUrl = "http://47.112.211.137:8080/conference/api/user/dogetInfo";
+    private String searchUrl="http://47.112.211.137:8080/conference/api/user/dosearchUsersByName";
     private String response;
     private static final int REQUEST_SUCCESS=0;
     private static final int REQUEST_FAILED=1;

@@ -62,9 +62,9 @@ public class ChattingRecyclerviewAdapter extends RecyclerView.Adapter<ChattingRe
     @Override
     public ChattingItemViewholder onCreateViewHolder(ViewGroup parent, int viewType) {
            View view = LayoutInflater.from(mContext).inflate(R.layout.item_bubble,parent,false);
-           Log.d("ChattingRecylcerview","---->创建了新的viewholder");
-           view.setOnClickListener(this);
-           return new ChattingItemViewholder(view);
+        Log.d("ChattingRecylcerview","---->创建了新的viewholder");
+        view.setOnClickListener(this);
+        return new ChattingItemViewholder(view);
     }
 
     @Override

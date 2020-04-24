@@ -59,7 +59,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private EditText et_company_sign_in,et_password_sign_in,et_password_re_sign_in,et_signature_sign_in,et_workplace_sign_in;
     private TextView tv_title_signin_cancel,tv_title_signin_yes;
     private String emailPattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$";
-    private String signinUrl = "http://39.106.47.27:8080/conference//api/user/doregister";
+    private String signinUrl = "http://47.112.211.137:8080/conference//api/user/doregister";
+    //    private String signinUrl = "http://39.106.47.27:8080/conference//api/user/doregister";
     private String remark_name_sign_in;
     private String phone_number_sign_in;
     private String email_sign_in;
@@ -128,7 +129,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                                 try {
                                     signdata=OkHttpUtil.getInstance().getSignInfo( remark_name_sign_in,password_sign_in,phone_number_sign_in,email_sign_in,
                                             user_address_sign_in,company_sign_in,signature_sign_in,workplace_sign_in,picturePath );
-
+                                    Log.d(Tag, signdata);
                                 } catch (IOException e) {
                                     e.printStackTrace( );
                                 }

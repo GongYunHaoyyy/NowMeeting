@@ -61,10 +61,10 @@ public class SubmitVoteActivity extends AppCompatActivity {
     private LinearLayout linearLayoutContainer;
     private RelativeLayout relativeLayoutItem;
     private Button buttonSubmit;
-    private String isVotedUrl = "http://39.106.47.27:8080/conference/api/vote/docheckUserVote";
-    private String getConferenceByNameUrl = "http://39.106.47.27:8080/conference/api/conference/dogetConferenceInfoByName";
-    private String getVoteInformationUrl = "http://39.106.47.27:8080/conference/api/vote/getVoteInformation";
-    private String userVoteUrl = "http://39.106.47.27:8080/conference/api/vote/douserVote";
+    private String isVotedUrl = "http://47.112.211.137:8080/conference/api/vote/docheckUserVote";
+    private String getConferenceByNameUrl = "http://47.112.211.137:8080/conference/api/conference/dogetConferenceInfoByName";
+    private String getVoteInformationUrl = "http://47.112.211.137:8080/conference/api/vote/getVoteInformation";
+    private String userVoteUrl = "http://47.112.211.137:8080/conference/api/vote/douserVote";
     private boolean isVoted;
     private HashMap<String,Integer> voteSituation = new HashMap<String, Integer>();
     private String Tag="SubmitVoteActivity";
