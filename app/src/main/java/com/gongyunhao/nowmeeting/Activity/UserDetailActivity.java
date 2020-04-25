@@ -26,7 +26,7 @@ public class UserDetailActivity extends BaseActivity {
     private Button btn_add_friend_detail;
     private String ADD_FRIEND_EXTRA="AddFriendActivity_AddFriend";
     private String friname;
-    private String inforUrl = "http://39.106.47.27:8080/conference/api/user/dogetInfo";
+    private String inforUrl = "http://47.112.211.137:8080/conference/api/user/dogetInfo";
     private String response;
     private AlertDialog alertDialog;
     private Data userdata;
